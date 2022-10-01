@@ -55,6 +55,7 @@ public class Tasks extends Main{
         Set<Entry<String, Integer>> set = daysremainingTable.entrySet(); 
         List<Entry<String, Integer>> list = new ArrayList<>(set);
         // Sort the list
+        
         Collections.sort(list, new Comparator<Map.Entry<String, Integer> >() {
             public int compare(Map.Entry<String, Integer> o1,
                                Map.Entry<String, Integer> o2)
@@ -68,6 +69,9 @@ public class Tasks extends Main{
 
         System.out.println("\033[H\033[2J\u001b[34mTodo List, Sorted by Due date: \n\u001b[37m");
         // put data from sorted list to hashmap
+        if (daysremainingTable.size() == 0) {
+            System.out.println("{To-Do List Empty}");
+        }
         int i = 1;
         String fstring = new String();
         
